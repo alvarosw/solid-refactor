@@ -1,7 +1,7 @@
 {
-  "name": "test-backend-digigov",
+  "name": "solid-refactoring",
   "version": "1.0.0",
-  "description": "![GitHub](https://img.shields.io/github/license/rodrigodevts/test-backend-digigov) ![GitHub last commit](https://img.shields.io/github/last-commit/rodrigodevts/test-backend-digigov)",
+  "description": "solution",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/main.ts"
