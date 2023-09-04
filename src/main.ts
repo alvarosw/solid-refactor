@@ -1,23 +1,19 @@
-interface Task {
-	title: string;
-	completed: boolean;
+import { Task } from './model/Task';
+import { TaskRepository } from './repository/TaskRepository';
+
+function createTask(taskRepository: TaskRepository, title: string): void {
+	const task = new Task(title);
+	taskRepository.add(task);
 }
 
-const tasks: Task[] = [];
-
-function addTask(title: string): void {
-	const task: Task = {
-		title,
-		completed: false,
-	};
-	tasks.push(task);
+function getTasks(taskRepository: TaskRepository): Task[] {
+	return taskRepository.list();
 }
 
-function listTasks(): Task[] {
-	return tasks;
-}
+const taskRepository = new TaskRepository();
 
-// Uso do código atual
-addTask("Ler livro");
-addTask("Fazer compras");
-console.log(listTasks());
+createTask(taskRepository, "Ler livro");
+createTask(taskRepository, "Fazer compras");
+
+const tasksList = getTasks(taskRepository);
+console.log(tasksList);
